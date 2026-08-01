@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.plain.com/changelog
+docs: https://www.plain.com/changelog
+scheme: dated
+note: Plain uses a dated, reverse-chronological changelog rather than semantic versions.
+entries:
+  - date: '2026-07-12'
+    title: Sidekick Home
+    highlights: Dedicated sidebar section to start Sidekick sessions on workspace topics, view running sessions, and manage tool integrations.
+  - date: '2026-07-07'
+    title: Run workflows on a schedule
+    highlights: Workflows can run on recurring schedules (hourly/daily/weekday/weekly) without requiring thread events.
+  - date: '2026-07-06'
+    title: Sidekick in Workflows
+    highlights: New workflow action lets Sidekick investigate matching threads; findings appear as team-visible discussions.
+  - date: '2026-07-03'
+    title: Weekly Digest July 3
+    highlights: '"Create customer" always in search, text-field thread filtering, and assorted UI/UX refinements.'
+  - date: '2026-07-01'
+    title: Thread fields via Chat
+    highlights: Chat widget can pass thread field values at init, associating context with threads before conversations begin.

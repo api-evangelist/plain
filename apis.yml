@@ -1,8 +1,30 @@
 aid: plain
 name: Plain
-description: Plain is a company surfaced as a portfolio company of battery-ventures and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Plain is a customer support platform for B2B and technical SaaS companies,
+  built entirely on its own public GraphQL API so there is full parity between
+  what the product UI and the API can do. It unifies support across email,
+  chat, Slack, and API-created threads, with customers, companies, tenants,
+  tiers and SLAs, labels, help center articles, snippets, tasks, and events as
+  first-class entities. Developers integrate via a Relay-style GraphQL API
+  (bearer API keys with fine-grained permissions), typed TypeScript and Go
+  SDKs, a CLI, customer-card UI components, HMAC-signed webhooks, a hosted MCP
+  server, and an official agent skill. This profile was enriched from Plain's
+  public developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/plain/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://framerusercontent.com/assets/8LkFDsA5X0pauVd2p3tTSJ4AF4s.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,12 +33,105 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Customer Support
+- Customer Service
+- Help Desk
+- Support
+- SaaS
+- GraphQL
+- Webhooks
+- MCP
+- Developer Tools
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Plain Core GraphQL API
+  description: >-
+    Plain's Core GraphQL API — the same API the Plain product is built on.
+    Manage customers, companies, tenants, threads, messaging, help center,
+    labels, tiers/SLAs, snippets, tasks, events, and webhook targets.
+  humanURL: https://www.plain.com/docs/api-reference
+  baseURL: https://core-api.uk.plain.com/graphql/v1
+  properties:
+  - type: GraphQL
+    url: graphql/plain-schema.graphql
+  - type: Documentation
+    url: https://www.plain.com/docs
+  - type: APIReference
+    url: https://www.plain.com/docs/api-reference
+  - type: Authentication
+    url: authentication/plain-authentication.yml
+common:
+- type: DomainSecurity
+  url: security/plain-domain-security.yml
+- type: DeveloperPortal
+  url: https://www.plain.com/docs
+- type: Documentation
+  url: https://www.plain.com/docs
+- type: APIReference
+  url: https://www.plain.com/docs/api-reference
+- type: GettingStarted
+  url: https://www.plain.com/docs/graphql/introduction
+- type: GitHubOrganization
+  url: https://github.com/team-plain
+- type: Blog
+  url: https://www.plain.com/blog
+- type: Support
+  url: https://help.plain.com
+- type: Pricing
+  url: https://www.plain.com/pricing
+- type: Login
+  url: https://app.plain.com
+- type: TermsOfService
+  url: https://www.plain.com/legal/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.plain.com/legal/privacy-policy
+- type: StatusPage
+  url: https://status.plain.com
+- type: ChangeLog
+  url: https://www.plain.com/changelog
+- type: ChangeLog
+  url: changelog/plain-changelog.yml
+- type: GraphQL
+  url: graphql/plain-schema.graphql
+- type: Authentication
+  url: authentication/plain-authentication.yml
+- type: Conventions
+  url: conventions/plain-conventions.yml
+- type: ErrorCatalog
+  url: errors/plain-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/plain-lifecycle.yml
+- type: Conformance
+  url: conformance/plain-conformance.yml
+- type: DataModel
+  url: data-model/plain-data-model.yml
+- type: Packages
+  url: packages/plain-packages.yml
+- type: SDKs
+  url: packages/plain-packages.yml
+- type: CLI
+  url: cli/plain-cli.yml
+- type: Components
+  url: components/plain-components.yml
+- type: MCPServer
+  url: mcp/plain-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Webhooks
+  url: asyncapi/plain-webhooks.yml
+- type: LLMsTxt
+  url: llms/plain-llms.txt
+- type: TrustCenter
+  url: security/plain-trust-center.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1

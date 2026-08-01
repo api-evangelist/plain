@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.plain.com/docs/graphql/sdk.md
+packages:
+  - language: typescript
+    registry: npm
+    name: "@team-plain/typescript-sdk"
+    url: https://www.npmjs.com/package/@team-plain/typescript-sdk
+    install: npm install @team-plain/typescript-sdk
+    version: 5.12.1
+    official: true
+    description: Typed SDK for Plain's Core GraphQL API, auto-generated from the schema.
+  - language: typescript
+    registry: npm
+    name: "@team-plain/ui-components"
+    url: https://www.npmjs.com/package/@team-plain/ui-components
+    install: npm install @team-plain/ui-components
+    official: true
+    description: Helper functions for building Plain UI components (customer cards) with full type safety.
+  - language: javascript
+    registry: npm
+    name: "@team-plain/cli"
+    url: https://www.npmjs.com/package/@team-plain/cli
+    install: npm install -g @team-plain/cli
+    official: true
+    description: CLI for interacting with the Plain API (document indexing for Smart AI Responses, etc.).
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/team-plain/go-sdk
+    url: https://pkg.go.dev/github.com/team-plain/go-sdk
+    install: go get github.com/team-plain/go-sdk
+    official: true
+    description: Go SDK for Plain's Core GraphQL API.

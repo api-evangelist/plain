@@ -1,0 +1,45 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.plain.com/docs/graphql
+api_style: graphql
+endpoint: https://core-api.uk.plain.com/graphql/v1
+authentication:
+  style: bearer-api-key
+  header: Authorization
+  prefix: plainApiKey_
+  ref: authentication/plain-authentication.yml
+pagination:
+  style: relay-cursor
+  docs: https://www.plain.com/docs/graphql/pagination
+  forward_params: [first, after]
+  reverse_params: [last, before]
+  mutually_exclusive: true
+  response_fields: [pageInfo, totalCount, endCursor, hasNextPage, hasPreviousPage]
+  default_page_size: 25
+  max_page_size: 100
+  note: Follows the Relay Connections spec; cursors are opaque.
+error_handling:
+  docs: https://www.plain.com/docs/graphql/error-handling
+  ref: errors/plain-error-codes.yml
+  note: >-
+    GraphQL queries surface errors in the top-level errors[] array; mutations
+    return a typed error union with a code and per-field validation errors.
+    Not RFC 9457 problem+json (GraphQL transport).
+idempotency:
+  request_level: false
+  note: >-
+    The GraphQL API documents no client idempotency-key header. Webhook
+    delivery is at-least-once and the event id is stable across retries, so
+    webhook *consumers* must be idempotent (see asyncapi/plain-webhooks.yml).
+webhooks:
+  ref: asyncapi/plain-webhooks.yml
+  delivery: at-least-once
+  signing: HMAC-SHA256 via Plain-Request-Signature header
+versioning:
+  api: uri-path (graphql/v1)
+  webhooks: dated webhook versions (https://www.plain.com/docs/webhooks/versions)
+rate_limiting:
+  note: No public rate-limit headers or numeric limits documented.
+identifiers:
+  style: prefixed-ulid
+  examples: {customer: c_, thread: th_}

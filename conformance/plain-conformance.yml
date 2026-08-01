@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: derived
+source: docs + graphql/plain-schema.graphql
+standards:
+  - id: graphql
+    conforms: true
+    evidence: Public GraphQL API with a published SDL schema at core-api.uk.plain.com/graphql/v1/schema.graphql
+  - id: relay-connections
+    conforms: true
+    evidence: Cursor pagination follows the Relay Connections spec (first/after/last/before, pageInfo, endCursor)
+  - id: oauth2
+    conforms: true
+    evidence: Hosted MCP server authenticates via OAuth (mcp.plain.com/mcp)
+  - id: mutual-tls
+    conforms: true
+    evidence: mTLS supported for webhooks and customer-card requests
+  - id: hmac-webhook-signing
+    conforms: true
+    evidence: Plain-Request-Signature header carries an HMAC-SHA256 hex digest of the body
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use GraphQL error unions, not application/problem+json
+  - id: rest-openapi
+    conforms: false
+    evidence: API is GraphQL-only; no OpenAPI/REST surface

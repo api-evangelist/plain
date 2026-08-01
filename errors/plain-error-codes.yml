@@ -1,0 +1,93 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.plain.com/docs/graphql/error-codes.md
+docs: https://www.plain.com/docs/graphql/error-codes
+format: graphql-error-union
+envelope:
+  note: >-
+    Queries return errors in the GraphQL top-level errors[] array. Mutations
+    return a typed error union carrying a `code` and, for validation failures,
+    per-field `fields[]` errors. Contact for internal errors: help@plain.com.
+error_codes:
+  - code: input_validation
+    meaning: The provided input failed validation.
+    action: Review the per-field errors returned.
+  - code: forbidden
+    meaning: Permission denied.
+    action: Verify access rights.
+  - code: insufficient_permissions
+    meaning: The API key/user lacks the required permission.
+    action: Grant the user/key the permission named in the error.
+  - code: internal
+    meaning: Server error requiring retry.
+    action: Retry; contact help@plain.com if it persists.
+  - code: not_found
+    meaning: The referenced entity does not exist.
+    action: Verify the entity exists before referencing it.
+  - code: not_yet_implemented
+    meaning: Feature is not yet available.
+    action: Contact help@plain.com if you believe it should exist.
+  - code: action_not_allowed_in_demo_workspace
+    meaning: Operation not allowed in a demo workspace.
+    action: Use a production workspace.
+  - code: attachment_file_size_too_large
+    meaning: Attachment exceeds the 6MB limit.
+    action: Reduce the file size.
+  - code: attachment_file_type_not_allowed
+    meaning: File extension is not permitted.
+    action: Use a permitted file type.
+  - code: attachment_not_uploaded
+    meaning: Attachment id created but file not uploaded.
+    action: Upload the attachment first.
+  - code: cannot_assign_customer_to_user
+    meaning: User lacks the required role to be assigned.
+    action: Give the user the "Help customers" role.
+  - code: cannot_remove_only_admin_user
+    meaning: Attempted to remove the last admin.
+    action: Assign another user the admin role first.
+  - code: cannot_reply_to_unsent_email
+    meaning: The email has not been sent yet.
+    action: Wait for email delivery.
+  - code: cannot_update_field
+    meaning: Field is immutable after creation.
+    action: Delete and recreate the entry.
+  - code: customer_already_exists_with_email
+    meaning: A customer already exists with this email.
+    action: Use the existing customer.
+  - code: customer_already_exists_with_external_id
+    meaning: A customer already exists with this external id.
+    action: Use the existing customer.
+  - code: customer_jwt_expired
+    meaning: Customer JWT has expired.
+    action: Recreate the JWT.
+  - code: customer_jwt_invalid
+    meaning: Customer JWT is malformed.
+    action: Fix the JWT contents.
+  - code: customer_is_marked_as_spam
+    meaning: Operation blocked because the customer is marked as spam.
+    action: Unmark the customer as spam.
+  - code: customer_group_has_memberships
+    meaning: Cannot delete a customer group that still has members.
+    action: Remove memberships first.
+  - code: domain_already_taken
+    meaning: Domain is used by another workspace.
+    action: Contact help@plain.com.
+  - code: too_many_webhook_targets
+    meaning: Maximum number of webhook targets reached.
+    action: Remove unused targets.
+  - code: too_many_customer_card_configs
+    meaning: Maximum number of customer card configs reached.
+    action: Delete unused configs.
+  - code: workspace_email_not_enabled
+    meaning: Email is disabled for the workspace.
+    action: Enable email in settings.
+  - code: workspace_chat_not_enabled
+    meaning: Chat is disabled for the workspace.
+    action: Enable chat in settings.
+  - code: you_shall_not_pass
+    meaning: Signup is currently blocked.
+    action: Try again later.
+note: >-
+  Full registry (60+ codes) at the source URL; the entries above are a
+  representative capture. This is a customer-support API, not a payments API,
+  so there are no card decline codes.

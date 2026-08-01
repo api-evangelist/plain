@@ -1,0 +1,14 @@
+generated: '2026-07-20'
+method: searched
+probe: true
+url: https://trust.plain.com/
+status: 200
+certifications: []
+evidence:
+  - source: https://trust.plain.com/
+    kind: trust-center
+    note: Live Trust Center portal (HTTP 200). Rendered client-side; specific certification names not machine-readable at probe time.
+note: >-
+  Trust Center portal is live and reachable. Named certifications were not
+  captured verbatim (SPA content); do not assert specific certs without
+  evidence. status.plain.com (status page) is also live.

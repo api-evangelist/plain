@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/team-plain/skills
+note: >-
+  Provider-published Agent Skill (Claude Code / Cursor plugin), saved verbatim.
+  Install via `npx skills add team-plain/plain-support`.
+skills:
+  - file: plain-support.md
+    name: plain-support
+    version: "2.2"
+    author: plain
+    api: graphql/plain-schema.graphql
+    description: >-
+      Access the Plain customer support platform via its GraphQL API: read
+      customers, threads, full timeline, and help center content; add notes to
+      threads; create, update, and publish help center articles.
+    capabilities:
+      - Customers: list, get, search by name/email/external id
+      - Threads: list, get, search, read timeline, add internal notes
+      - Help Center: list centers/articles/groups, create/update/publish articles
+      - Companies, Tenants, Labels, Tiers & SLAs, Workspace: read

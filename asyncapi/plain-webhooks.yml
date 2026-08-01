@@ -1,0 +1,50 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.plain.com/docs/webhooks.md
+spec_type: Webhooks
+docs: https://www.plain.com/docs/webhooks
+delivery:
+  method: HTTP POST
+  guarantee: at-least-once
+  success: 2xx response
+  idempotency_note: Event id is stable across retries; consumers must be idempotent.
+  versions: https://www.plain.com/docs/webhooks/versions
+security:
+  request_signing:
+    header: Plain-Request-Signature
+    algorithm: HMAC-SHA256
+    docs: https://www.plain.com/docs/request-signing
+  mtls: https://www.plain.com/docs/mtls
+  basic_auth: true
+envelope:
+  fields: [id, type, timestamp, workspaceId, payload, webhookMetadata]
+  timestamp_format: ISO8601 UTC
+  pii_note: Payloads may contain Personally Identifiable Information (PII).
+event_types:
+  - customer.created
+  - customer.updated
+  - customer.deleted
+  - customer_group_membership.changed
+  - thread.created
+  - thread.status_transitioned
+  - thread.assignment_transitioned
+  - thread.priority_changed
+  - thread.labels_changed
+  - thread.email_received
+  - thread.email_sent
+  - thread.chat_received
+  - thread.chat_sent
+  - thread.slack_message_received
+  - thread.slack_message_sent
+  - thread.note_created
+  - thread.field_created
+  - thread.field_updated
+  - thread.field_deleted
+  - thread.service_level_agreement_status_transitioned
+sdk:
+  name: "@team-plain/typescript-sdk (webhooks helpers)"
+  docs: https://www.plain.com/docs/webhooks/sdk
+  note: Webhook parsing and signature verification helpers.
+management:
+  docs: https://www.plain.com/docs/graphql/webhook-targets
+  note: Webhook targets are created/managed via the GraphQL API (webhook-targets mutations).

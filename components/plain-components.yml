@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.plain.com/docs/ui-components.md
+docs: https://www.plain.com/docs/ui-components
+families:
+  - name: Customer Card UI Components
+    description: >-
+      Declarative UI components used to render live customer context (customer
+      cards) inside the Plain agent workspace. Returned by your customer-card
+      endpoint as JSON.
+    loader: "@team-plain/ui-components"
+    loader_url: https://www.npmjs.com/package/@team-plain/ui-components
+    sdk_docs: https://www.plain.com/docs/ui-components/sdk
+    components:
+      - Badge
+      - Container
+      - CopyButton
+      - Divider
+      - LinkButton
+      - PlainText
+      - Row
+      - Spacer
+      - Text
+      - WorkflowButton
+note: >-
+  Server-rendered declarative components (distinct from the server SDKs in
+  packages/). WorkflowButton lets agents trigger a workflow directly from a
+  customer card.

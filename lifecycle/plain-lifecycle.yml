@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.plain.com/docs
+versioning:
+  scheme: uri-path
+  current: v1
+  endpoint: https://core-api.uk.plain.com/graphql/v1
+  webhook_versions:
+    docs: https://www.plain.com/docs/webhooks/versions
+    note: Webhook payloads are separately versioned (dated webhook versions).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal API deprecation/sunset policy published.
+status_page: https://status.plain.com
+sla:
+  note: >-
+    Tier-level SLA configuration is a product feature (Tiers & SLAs), not a
+    published platform uptime SLA.
+  product_docs: https://www.plain.com/docs/graphql/tiers/service-level-agreements
+deprecated_operations: []

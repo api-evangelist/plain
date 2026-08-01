@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/team-plain/cli
+docs: https://www.plain.com/docs/api-reference/graphql/authentication
+name: "@team-plain/cli"
+binary: plain
+install:
+  - npm install -g @team-plain/cli
+authentication:
+  method: api-key
+  env: PLAIN_API_KEY
+  format: plainApiKey_xxx
+help: plain --help
+commands:
+  - name: index-url
+    group: Index Documents
+    summary: Index a single document by URL (scraped + indexed for Smart AI Responses).
+    permission: indexedDocument:create
+  - name: index-sitemap
+    group: Index Documents
+    summary: Index all URLs in a provided sitemap.
+    permission: indexedDocument:create
+note: >-
+  The CLI focuses on document indexing for Smart AI Responses; broader API
+  access is via the TypeScript/Go SDKs and the GraphQL API directly.

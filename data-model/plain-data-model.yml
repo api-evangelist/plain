@@ -1,0 +1,57 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/team-plain/skills (references/ENTITIES.md) + graphql/plain-schema.graphql
+docs: https://www.plain.com/docs/graphql
+entities:
+  - name: Customer
+    id_prefix: c_
+    key_fields: [id, fullName, shortName, email, externalId, status, company, createdAt, updatedAt]
+    status_enum: [ACTIVE, INACTIVE, SPAM, DELETED, UNVERIFIED]
+  - name: Company
+    key_fields: [id, name, domainName]
+  - name: Thread
+    id_prefix: th_
+    key_fields: [id, title, description, previewText, status, priority, externalId, channel, customer, assignedTo, labels, createdAt, updatedAt]
+    status_enum: [TODO, SNOOZED, DONE]
+    priority: 0=urgent .. 3=low
+  - name: Tenant
+    key_fields: [id, name, externalId]
+  - name: Tier
+    key_fields: [id, name, serviceLevelAgreements]
+  - name: Label
+    key_fields: [id, labelType]
+  - name: User
+    key_fields: [id, fullName, publicName, email, role]
+  - name: MachineUser
+    key_fields: [id, fullName]
+  - name: HelpCenter
+    key_fields: [id, articles, articleGroups]
+relationships:
+  - from: Customer
+    to: Company
+    kind: belongs_to
+    via: company
+  - from: Thread
+    to: Customer
+    kind: belongs_to
+    via: customer
+  - from: Thread
+    to: User
+    kind: has_one
+    via: assignedTo
+  - from: Thread
+    to: Label
+    kind: has_many
+    via: labels
+  - from: Tier
+    to: Company
+    kind: has_many
+    via: members
+  - from: Tenant
+    to: Customer
+    kind: has_many
+    via: customers
+  - from: HelpCenter
+    to: Article
+    kind: has_many
+    via: articles
