@@ -8,28 +8,57 @@ server:
   url: https://mcp.plain.com/mcp
   auth:
     type: oauth2
-    note: >-
-      Authenticate with your existing Plain account via OAuth. The MCP server
-      inherits the same permissions as your user; no API key required. Clients
-      receive an access token and a refresh token.
+    note: Authenticate with your existing Plain account via OAuth. The MCP server inherits the same permissions
+      as your user; no API key required. Clients receive an access token and a refresh token.
 tool_count: 30
 tool_categories:
-  - name: Threads
-    count: 13
-    examples: [fetch, search, reply, assign, mark_done, mark_todo, snooze, prioritize, label, create_note]
-  - name: Customers
-    count: 4
-    examples: [list, fetch_details, view_threads, search]
-  - name: Tenants
-    count: 3
-    examples: [list, fetch_details, search, upsert]
-  - name: Help Center
-    count: 6
-    examples: [list_centers, list_article_groups, list_articles, upsert_articles]
-  - name: User & Workspace
-    count: 4
-    examples: [fetch_authenticated_user, workspace_details, find_users, list_labels]
-notes: >-
-  Write-classified tools require confirmation before execution in most AI
-  clients. An official Cursor plugin (team-plain/cursor-plugin-mcp) is also
-  published.
+- name: Threads
+  count: 13
+  examples:
+  - fetch
+  - search
+  - reply
+  - assign
+  - mark_done
+  - mark_todo
+  - snooze
+  - prioritize
+  - label
+  - create_note
+- name: Customers
+  count: 4
+  examples:
+  - list
+  - fetch_details
+  - view_threads
+  - search
+- name: Tenants
+  count: 3
+  examples:
+  - list
+  - fetch_details
+  - search
+  - upsert
+- name: Help Center
+  count: 6
+  examples:
+  - list_centers
+  - list_article_groups
+  - list_articles
+  - upsert_articles
+- name: User & Workspace
+  count: 4
+  examples:
+  - fetch_authenticated_user
+  - workspace_details
+  - find_users
+  - list_labels
+notes: Write-classified tools require confirmation before execution in most AI clients. An official Cursor
+  plugin (team-plain/cursor-plugin-mcp) is also published.
+deployment:
+  mode: remote
+  endpoint: https://mcp.plain.com/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
