@@ -90,6 +90,8 @@ apis:
   - type: Authentication
     url: authentication/plain-authentication.yml
 common:
+- type: Website
+  url: https://www.plain.com/
 - type: DomainSecurity
   url: security/plain-domain-security.yml
 - type: DeveloperPortal
