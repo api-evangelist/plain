@@ -1,0 +1,1 @@
+{"resource":"https://mcp.plain.com/mcp","authorization_servers":["https://signin.auth.plain.com"],"bearer_methods_supported":["header"],"scopes_supported":["openid","offline_access"]}
