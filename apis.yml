@@ -47,7 +47,7 @@ created: '2026-07-17'
 modified: '2026-07-20'
 tags:
 - Company
-- Customer-Support
+- Customer Support
 - Customer Service
 - Help Desk
 - Support
@@ -67,6 +67,7 @@ tags_raw:
 - Webhooks
 - MCP
 - Developer Tools
+- Customer-Support
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
