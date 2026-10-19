@@ -55,3 +55,73 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: plain-go-module-proxy
+  label: Go module proxy
+  partner_name: Go module proxy
+  category: official SDK (Go)
+  type: register
+  channel: package-registry
+  evidence: https://pkg.go.dev/github.com/team-plain/go-sdk
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Go module proxy (public registry JSON)
+    spec_file: null
+    language: Go
+    packages:
+    - name: github.com/team-plain/go-sdk
+      version: v0.0.1
+      released: '2023-08-01'
+      released_field: Time
+      lapsed: true
+      page: https://pkg.go.dev/github.com/team-plain/go-sdk
+      repo_leg: github-org:team-plain
+      publisher_leg: org:team-plain
+      matched_by: github-org
+    current: false
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: plain-npm-registry
+  label: npm registry
+  partner: npm
+  partner_name: npm registry
+  category: official SDK (JavaScript/TypeScript)
+  type: register
+  channel: package-registry
+  evidence: https://www.npmjs.com/package/@team-plain/cli
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@team-plain/cli'
+      version: 1.0.2
+      released: '2026-10-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@team-plain/cli
+      repo_leg: github-org:team-plain
+      publisher_leg: email:plain.com
+      matched_by: domain
+    - name: '@team-plain/ui-components'
+      version: 13.0.0
+      released: '2026-09-25'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@team-plain/ui-components
+      repo_leg: github-org:team-plain
+      publisher_leg: email:plain.com
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
